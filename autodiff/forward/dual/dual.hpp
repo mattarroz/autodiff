@@ -583,7 +583,7 @@ struct Dual
     template<typename U>
     operator U() const { return static_cast<U>(val); }
 #else
-    explicit operator T() const { return val; }
+    operator T() const { return val; }
 
     template<typename U>
     explicit operator U() const { return static_cast<U>(val); }
