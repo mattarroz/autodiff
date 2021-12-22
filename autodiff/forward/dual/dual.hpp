@@ -935,6 +935,12 @@ constexpr auto max(L&& l, R&& r)
     return (x >= y) ? x : y;
 }
 
+template<typename L, EnableIf<isExpr<L>>...>
+const bool isfinite(L&& l)
+{
+    return std::isfinite(val(l));
+}
+
 //=====================================================================================================================
 //
 // COMPARISON OPERATORS OVERLOADING
